@@ -29,6 +29,49 @@ def keep(name, is_dir):
     return True
 
 
+# 301 desde las URLs antiguas de Tilda → nuevas (SEO). Se escribe como dist/_redirects.
+REDIRECTS = [
+    ("/eliminacion_de_tatuajes", "/eliminacion-de-tatuajes/"),
+    ("/rejuvenecimiento_cutaneo", "/rejuvenecimiento-cutaneo/"),
+    ("/eliminacion_de_pigmentacion", "/eliminacion-de-pigmentacion/"),
+    ("/depilacion_laser", "/depilacion-laser/"),
+    ("/tratamiento_del_acne", "/tratamiento-del-acne/"),
+    ("/eliminacion_de_aranas_vasculares_y_rosacea", "/aranas-vasculares-rosacea/"),
+    ("/eliminacion_de_cicatrices_y_estrias", "/cicatrices-y-estrias/"),
+    ("/tratamiento_de_onicomicosis", "/onicomicosis/"),
+    ("/sobre_nosotros", "/sobre-nosotros/"),
+    ("/promociones", "/programas/"),
+    ("/aviso_legal", "/aviso-legal/"),
+    ("/politica_de_privacidad", "/politica-de-privacidad/"),
+    ("/politica_de_cookies", "/politica-de-cookies/"),
+    ("/cuestionario", "/contacto/"),
+    ("/tspapada", "/programas/"),
+    ("/eliminararrugas", "/programas/"),
+    ("/en", "/en/"),
+    ("/tattoo_removal", "/en/eliminacion-de-tatuajes/"),
+    ("/skin_rejuvenation", "/en/rejuvenecimiento-cutaneo/"),
+    ("/spider_vein_and_rosacea_removal", "/en/aranas-vasculares-rosacea/"),
+    ("/hyperpigmentation_removal", "/en/eliminacion-de-pigmentacion/"),
+    ("/laser_depilation", "/en/depilacion-laser/"),
+    ("/acne_treatment", "/en/tratamiento-del-acne/"),
+    ("/scar_and_stretchmark_removal", "/en/cicatrices-y-estrias/"),
+    ("/fungus_treatment", "/en/onicomicosis/"),
+    ("/aboutus", "/en/sobre-nosotros/"),
+    ("/ru", "/ru/"),
+    ("/blog", "/blog/"),
+    ("/en/blog", "/en/blog/"),
+    ("/secretos_de_antiedad", "/blog/secretos-antiedad/"),
+    ("/antiage_secrets", "/en/blog/secretos-antiedad/"),
+    ("/guia_spf", "/blog/reglas-del-spf/"),
+    ("/spf_guide", "/en/blog/reglas-del-spf/"),
+    ("/errores_rosacea", "/blog/rosacea-9-errores/"),
+    ("/rosacea_mistakes", "/en/blog/rosacea-9-errores/"),
+    ("/page96024326.html", "/"),
+    ("/page96238956.html", "/"),
+    ("/starwalkermaqx", "/"),
+]
+
+
 def main():
     if os.path.isdir(DIST):
         shutil.rmtree(DIST)
@@ -50,8 +93,14 @@ def main():
             shutil.copy2(src, dst)
             copied += 1
 
+    # _redirects nativo de Netlify (en la carpeta publicada, máxima prioridad)
+    lines = [f"{a}  {b}  301" for a, b in REDIRECTS]
+    with open(os.path.join(DIST, "_redirects"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+    copied += 1
+
     htmls = sum(1 for b, _, fs in os.walk(DIST) for f in fs if f.endswith(".html"))
-    print(f"dist/ listo: {copied} archivos ({htmls} .html). Carpeta para desplegar: {DIST}")
+    print(f"dist/ listo: {copied} archivos ({htmls} .html) + _redirects ({len(REDIRECTS)}). Carpeta: {DIST}")
 
 
 if __name__ == "__main__":
