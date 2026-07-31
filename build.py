@@ -25,6 +25,14 @@ PIXEL = "1040600500573477"
 AMO_ENDPOINT = "https://forms.amocrm.ru/queue/add"
 AMO_FORM_ID = "1735274"                                # форма «Impuls.es (new site)» → Sucursal Barcelona / Interesado
 AMO_HASH = "ca114f35e3ae13305a69acd227ebad86"
+# Prefijos de país para el teléfono (como en adelgazarnatural). El primero es el por defecto.
+PHONE_CODES = [
+    ("+34", "🇪🇸 +34"), ("+7", "🇷🇺 +7"), ("+380", "🇺🇦 +380"), ("+44", "🇬🇧 +44"),
+    ("+33", "🇫🇷 +33"), ("+49", "🇩🇪 +49"), ("+39", "🇮🇹 +39"), ("+351", "🇵🇹 +351"),
+    ("+31", "🇳🇱 +31"), ("+32", "🇧🇪 +32"), ("+41", "🇨🇭 +41"), ("+46", "🇸🇪 +46"),
+    ("+1", "🇺🇸 +1"), ("+212", "🇲🇦 +212"), ("+971", "🇦🇪 +971"), ("+40", "🇷🇴 +40"),
+    ("+48", "🇵🇱 +48"),
+]
 
 def esc(s): return html.escape(s, quote=True)
 
@@ -147,7 +155,10 @@ def cta_form(lang, page_id):
         <label class="form__field"><span class="sr-only">{esc(f["nombre"])}</span>
           <input type="text" name="nombre" placeholder="{esc(f["nombre"])} *" aria-label="{esc(f["nombre"])}" required /></label>
         <label class="form__field"><span class="sr-only">{esc(f["telefono"])}</span>
-          <input type="tel" name="telefono" placeholder="{esc(f["telefono"])} *" aria-label="{esc(f["telefono"])}" required /></label>
+          <div class="phone-row">
+            <select name="phone_code" class="phone-code" aria-label="{esc(f.get("phone_code", "Código de país"))}">{"".join(f'<option value="{v}"{" selected" if i==0 else ""}>{t}</option>' for i,(v,t) in enumerate(PHONE_CODES))}</select>
+            <input type="tel" name="telefono" placeholder="{esc(f["telefono"])} *" aria-label="{esc(f["telefono"])}" required />
+          </div></label>
         <label class="form__field"><span class="sr-only">{esc(f["email"])}</span>
           <input type="email" name="email" placeholder="{esc(f["email"])}" aria-label="{esc(f["email"])}" /></label>
         <label class="form__field"><span class="sr-only">{esc(f["mensaje"])}</span>
@@ -238,7 +249,7 @@ function impulsSubmit(f){{
   var p=new URLSearchParams();
   p.append('form_id',FID);p.append('hash',HASH);
   p.append('fields[name_1]',v('nombre'));
-  p.append('fields[949379_1][682993]',v('telefono'));
+  p.append('fields[949379_1][682993]',(v('phone_code')+' '+v('telefono')).trim());
   p.append('fields[949381_1][683005]',v('email'));
   p.append('fields[note_2]',nota);
   p.append('user_origin','');p.append('robots','');

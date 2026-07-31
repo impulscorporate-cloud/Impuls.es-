@@ -120,7 +120,10 @@
         <label class="form__field"><span class="sr-only">Name</span>
           <input type="text" name="nombre" placeholder="Name *" aria-label="Name" required /></label>
         <label class="form__field"><span class="sr-only">Phone</span>
-          <input type="tel" name="telefono" placeholder="Phone *" aria-label="Phone" required /></label>
+          <div class="phone-row">
+            <select name="phone_code" class="phone-code" aria-label="Código de país"><option value="+34" selected>🇪🇸 +34</option><option value="+7">🇷🇺 +7</option><option value="+380">🇺🇦 +380</option><option value="+44">🇬🇧 +44</option><option value="+33">🇫🇷 +33</option><option value="+49">🇩🇪 +49</option><option value="+39">🇮🇹 +39</option><option value="+351">🇵🇹 +351</option><option value="+31">🇳🇱 +31</option><option value="+32">🇧🇪 +32</option><option value="+41">🇨🇭 +41</option><option value="+46">🇸🇪 +46</option><option value="+1">🇺🇸 +1</option><option value="+212">🇲🇦 +212</option><option value="+971">🇦🇪 +971</option><option value="+40">🇷🇴 +40</option><option value="+48">🇵🇱 +48</option></select>
+            <input type="tel" name="telefono" placeholder="Phone *" aria-label="Phone" required />
+          </div></label>
         <label class="form__field"><span class="sr-only">Email (optional)</span>
           <input type="email" name="email" placeholder="Email (optional)" aria-label="Email (optional)" /></label>
         <label class="form__field"><span class="sr-only">Which treatment are you interested in?</span>
@@ -198,7 +201,7 @@ function impulsSubmit(f){
   var p=new URLSearchParams();
   p.append('form_id',FID);p.append('hash',HASH);
   p.append('fields[name_1]',v('nombre'));
-  p.append('fields[949379_1][682993]',v('telefono'));
+  p.append('fields[949379_1][682993]',(v('phone_code')+' '+v('telefono')).trim());
   p.append('fields[949381_1][683005]',v('email'));
   p.append('fields[note_2]',nota);
   p.append('user_origin','');p.append('robots','');

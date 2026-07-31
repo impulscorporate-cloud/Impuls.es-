@@ -143,7 +143,7 @@ function impulsSubmit(f){
   var p=new URLSearchParams();
   p.append('form_id',FID);p.append('hash',HASH);
   p.append('fields[name_1]',v('nombre'));
-  p.append('fields[949379_1][682993]',v('telefono'));
+  p.append('fields[949379_1][682993]',(v('phone_code')+' '+v('telefono')).trim());
   p.append('fields[949381_1][683005]',v('email'));
   p.append('fields[note_2]',nota);
   p.append('user_origin','');p.append('robots','');
