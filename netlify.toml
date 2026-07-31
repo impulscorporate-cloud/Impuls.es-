@@ -3,6 +3,166 @@
 [build]
   publish = "dist"
 
+# ---------- Redirecciones 301 desde las URLs antiguas (Tilda) ----------
+# Conservan el SEO al migrar impuls.es al nuevo sitio.
+# ES — servicios / páginas
+[[redirects]]
+  from = "/eliminacion_de_tatuajes"
+  to = "/eliminacion-de-tatuajes/"
+  status = 301
+[[redirects]]
+  from = "/rejuvenecimiento_cutaneo"
+  to = "/rejuvenecimiento-cutaneo/"
+  status = 301
+[[redirects]]
+  from = "/eliminacion_de_pigmentacion"
+  to = "/eliminacion-de-pigmentacion/"
+  status = 301
+[[redirects]]
+  from = "/depilacion_laser"
+  to = "/depilacion-laser/"
+  status = 301
+[[redirects]]
+  from = "/tratamiento_del_acne"
+  to = "/tratamiento-del-acne/"
+  status = 301
+[[redirects]]
+  from = "/eliminacion_de_aranas_vasculares_y_rosacea"
+  to = "/aranas-vasculares-rosacea/"
+  status = 301
+[[redirects]]
+  from = "/eliminacion_de_cicatrices_y_estrias"
+  to = "/cicatrices-y-estrias/"
+  status = 301
+[[redirects]]
+  from = "/tratamiento_de_onicomicosis"
+  to = "/onicomicosis/"
+  status = 301
+[[redirects]]
+  from = "/sobre_nosotros"
+  to = "/sobre-nosotros/"
+  status = 301
+[[redirects]]
+  from = "/promociones"
+  to = "/programas/"
+  status = 301
+[[redirects]]
+  from = "/aviso_legal"
+  to = "/aviso-legal/"
+  status = 301
+[[redirects]]
+  from = "/politica_de_privacidad"
+  to = "/politica-de-privacidad/"
+  status = 301
+[[redirects]]
+  from = "/politica_de_cookies"
+  to = "/politica-de-cookies/"
+  status = 301
+[[redirects]]
+  from = "/cuestionario"
+  to = "/contacto/"
+  status = 301
+[[redirects]]
+  from = "/tspapada"
+  to = "/programas/"
+  status = 301
+[[redirects]]
+  from = "/eliminararrugas"
+  to = "/programas/"
+  status = 301
+# EN — servicios / páginas
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+[[redirects]]
+  from = "/tattoo_removal"
+  to = "/en/eliminacion-de-tatuajes/"
+  status = 301
+[[redirects]]
+  from = "/skin_rejuvenation"
+  to = "/en/rejuvenecimiento-cutaneo/"
+  status = 301
+[[redirects]]
+  from = "/spider_vein_and_rosacea_removal"
+  to = "/en/aranas-vasculares-rosacea/"
+  status = 301
+[[redirects]]
+  from = "/hyperpigmentation_removal"
+  to = "/en/eliminacion-de-pigmentacion/"
+  status = 301
+[[redirects]]
+  from = "/laser_depilation"
+  to = "/en/depilacion-laser/"
+  status = 301
+[[redirects]]
+  from = "/acne_treatment"
+  to = "/en/tratamiento-del-acne/"
+  status = 301
+[[redirects]]
+  from = "/scar_and_stretchmark_removal"
+  to = "/en/cicatrices-y-estrias/"
+  status = 301
+[[redirects]]
+  from = "/fungus_treatment"
+  to = "/en/onicomicosis/"
+  status = 301
+[[redirects]]
+  from = "/aboutus"
+  to = "/en/sobre-nosotros/"
+  status = 301
+# RU
+[[redirects]]
+  from = "/ru"
+  to = "/ru/"
+  status = 301
+# Blog
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/en/blog"
+  to = "/en/blog/"
+  status = 301
+[[redirects]]
+  from = "/secretos_de_antiedad"
+  to = "/blog/secretos-antiedad/"
+  status = 301
+[[redirects]]
+  from = "/antiage_secrets"
+  to = "/en/blog/secretos-antiedad/"
+  status = 301
+[[redirects]]
+  from = "/guia_spf"
+  to = "/blog/reglas-del-spf/"
+  status = 301
+[[redirects]]
+  from = "/spf_guide"
+  to = "/en/blog/reglas-del-spf/"
+  status = 301
+[[redirects]]
+  from = "/errores_rosacea"
+  to = "/blog/rosacea-9-errores/"
+  status = 301
+[[redirects]]
+  from = "/rosacea_mistakes"
+  to = "/en/blog/rosacea-9-errores/"
+  status = 301
+# Páginas Tilda internas / landings sin equivalente → inicio
+[[redirects]]
+  from = "/page96024326.html"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/page96238956.html"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/starwalkermaqx"
+  to = "/"
+  status = 301
+
 # Cabeceras de seguridad básicas
 [[headers]]
   for = "/*"
