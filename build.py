@@ -19,6 +19,12 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = "https://impuls.es"
 GTM = "GTM-M2GNTDX"
 PIXEL = "1040600500573477"
+# amoCRM: envío directo al endpoint de formularios web (mismo método que adelgazarnatural.es).
+# form_id + hash identifican la форма-web de amoCRM (embudo/etapa destino). Los IDs de campo
+# (949379 tel, 949381 email) son de cuenta → los mismos que en adelgazar (misma cuenta amoCRM).
+AMO_ENDPOINT = "https://forms.amocrm.ru/queue/add"
+AMO_FORM_ID = "1735274"                                # форма «Impuls.es (new site)» → Sucursal Barcelona / Interesado
+AMO_HASH = "ca114f35e3ae13305a69acd227ebad86"
 
 def esc(s): return html.escape(s, quote=True)
 
@@ -221,7 +227,27 @@ def footer(lang):
 </div>
 <script>
 function impulsCookie(ok){{try{{localStorage.setItem('impuls_consent',ok?'accepted':'rejected');}}catch(e){{}}var b=document.getElementById('cookie-banner');if(b)b.hidden=true;if(ok&&window.__impulsLoadAnalytics)window.__impulsLoadAnalytics();}}
-function impulsSubmit(f){{if(f._gotcha&&f._gotcha.value)return false;f.classList.add('is-sent');return false;}}
+function impulsSubmit(f){{
+  if(f._gotcha&&f._gotcha.value)return false;
+  var AMO="{AMO_ENDPOINT}",FID="{AMO_FORM_ID}",HASH="{AMO_HASH}";
+  var v=function(n){{var el=f.querySelector('[name="'+n+'"]');return el?String(el.value).trim():'';}};
+  if(!FID||!HASH){{f.classList.add('is-sent');return false;}}
+  var nota='Solicitud desde: '+document.title+' — '+location.href;
+  var msg=v('mensaje');if(msg)nota+=' · Mensaje: '+msg;
+  nota+=' · Idioma: '+v('idioma');
+  var p=new URLSearchParams();
+  p.append('form_id',FID);p.append('hash',HASH);
+  p.append('fields[name_1]',v('nombre'));
+  p.append('fields[949379_1][682993]',v('telefono'));
+  p.append('fields[949381_1][683005]',v('email'));
+  p.append('fields[note_2]',nota);
+  p.append('user_origin','');p.append('robots','');
+  var b=f.querySelector('button[type=submit]');if(b)b.disabled=true;
+  fetch(AMO,{{method:'POST',mode:'no-cors',headers:{{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}},body:p.toString()}})
+   .then(function(){{f.classList.add('is-sent');f.reset();if(typeof window.fbq==='function')window.fbq('track','Lead');if(typeof window.gtag==='function')window.gtag('event','generate_lead');}})
+   .then(null,function(){{if(b)b.disabled=false;}});
+  return false;
+}}
 (function(){{try{{if(!localStorage.getItem('impuls_consent')){{var b=document.getElementById('cookie-banner');if(b)b.hidden=false;}}}}catch(e){{}}}})();
 </script>
 </body>

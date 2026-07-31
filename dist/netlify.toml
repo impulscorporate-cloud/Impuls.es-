@@ -1,0 +1,12 @@
+# Despliegue del sitio Impuls Longevity en Netlify.
+# La carpeta dist/ (generada por build.py + package.py) es la que se publica.
+[build]
+  publish = "dist"
+
+# Cabeceras de seguridad básicas
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
