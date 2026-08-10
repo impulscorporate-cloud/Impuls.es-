@@ -314,11 +314,17 @@ def render_home(lang):
             href, attrs, arrow = s["external"], ' target="_blank" rel="noopener"', "↗"
         else:
             href, attrs, arrow = f'{home}{s["slug"]}/', '', "→"
-        return f'''<article class="card">
-        <div class="card__icon">{icon(s["slug"])}</div>
+        # foto real por servicio (assets/cards/<slug>.jpg, generadas optimizadas ~760px).
+        # alt descriptivo (SEO) y lazy + aspect-ratio en CSS para no romper CLS.
+        photo = f'/assets/cards/{s["slug"]}.jpg'
+        alt = esc(f'{d["name"]} · Impuls Longevity Barcelona')
+        return f'''<article class="card card--photo">
+        <div class="card__media"><img src="{photo}" alt="{alt}" loading="lazy" decoding="async" /></div>
+        <div class="card__body">
         <h3>{esc(d["name"])}</h3>
         <p>{esc(d["tag"])}</p>
         <a class="card__link" href="{href}"{attrs}>{esc(d["name"])} {arrow}</a>
+        </div>
       </article>'''
     cards = "".join(_card(s) for s in SERVICES if s.get("group") != "wellness")
     wellness = "".join(_card(s) for s in SERVICES if s.get("group") == "wellness")
@@ -362,12 +368,15 @@ def render_home(lang):
     # tecnología
     techs = "".join(f'<div class="tech"><div class="k">{esc(k)}</div><p>{esc(v)}</p></div>' for k, v in c["tech_items"])
     out += f'''<section class="section" id="tecnologia">
-  <div class="container">
-    <div class="section-head">
+  <div class="container split">
+    <div class="split__text">
       <span class="eyebrow">{esc(c["tech_eyebrow"])}</span>
       <h2>{esc(c["tech_h2"])}</h2>
       <p>{esc(c["tech_p"])}</p>
     </div>
+    <div class="split__media"><img src="/assets/tech-fotona.jpg" alt="Láser Fotona StarWalker y SP Dynamis en Impuls Longevity Barcelona" loading="lazy" decoding="async" /></div>
+  </div>
+  <div class="container tech-grid-wrap">
     <div class="tech-grid">{techs}</div>
   </div>
 </section>

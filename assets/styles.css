@@ -151,6 +151,15 @@ h1, h2, h3, h4 {
 .card p { font-size: .95rem; color: var(--body); margin: 0; }
 .card__link { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-ink); }
 
+/* Tarjeta de servicio con foto real arriba (home). aspect-ratio fijo = sin CLS. */
+.card--photo { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.card__media { aspect-ratio: 16 / 11; overflow: hidden; background: var(--brand-tint); }
+.card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.card--photo:hover .card__media img { transform: scale(1.045); }
+.card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1 1 auto; }
+.card--photo h3 { margin-bottom: 8px; }
+.card--photo .card__link { margin-top: auto; padding-top: 14px; }
+
 /* ---------- Programas destacados (editorial) ---------- */
 .program { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 72px); align-items: center; padding-block: clamp(40px, 6vw, 80px); }
 .program + .program { border-top: 1px solid var(--line); }
@@ -234,6 +243,7 @@ h1, h2, h3, h4 {
 
 /* ---------- Tecnologías ---------- */
 .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.tech-grid-wrap { margin-top: clamp(30px, 5vw, 56px); }
 .tech { border: 1px solid var(--line); border-radius: var(--radius-card); padding: 28px 26px; background: var(--surface); box-shadow: var(--shadow-soft); }
 .tech .k { color: var(--ink); font-weight: 700; font-size: 1.05rem; }
 .tech .k::before { content: "—"; color: var(--brand-ink); margin-right: 8px; }
