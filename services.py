@@ -20,7 +20,13 @@ SERVICES = [
             "benefits": ["Fragmenta tintas de varios colores", "Respeta la piel circundante", "Protocolo adaptado a cada tatuaje", "Realizado por especialistas certificados"],
             "steps": [("Valoración", "Analizamos el tatuaje y tu piel y estimamos el número de sesiones."), ("Sesiones láser", "El láser fragmenta la tinta, que el organismo elimina de forma natural."), ("Cuidado y resultado", "Te damos pautas de cuidado entre sesiones para un resultado óptimo.")],
             "tech": ["Láser Q-Switched", "Neodimio:YAG"],
-            "faq": [("¿Duele el tratamiento?", "Se percibe una molestia tolerable; adaptamos la comodidad durante la sesión."), ("¿Cuántas sesiones necesito?", "Varía según el tatuaje; lo estimamos en la valoración inicial.")],
+            "faq": [
+                ("¿Cuántas sesiones necesito?", "No damos una cifra «a ojo»: cada tatuaje y cada piel reaccionan de forma distinta. En la valoración inicial, con un cuestionario y una pequeña prueba de láser, definimos un rango realista según tu caso y tu objetivo."),
+                ("¿Cuánto cuesta?", "Seguimos el mismo principio de transparencia: el precio real por sesión se indica tras valorar la piel y comprobar cómo reacciona al láser. Es la única forma de darte una cifra honesta y no una estimación al azar."),
+                ("¿Duele el tratamiento?", "Se percibe una molestia tolerable. Cuidamos tu comodidad durante toda la sesión y adaptamos el protocolo a tu piel."),
+                ("¿Se elimina del todo? ¿Quedará cicatriz?", "El objetivo es aclarar o eliminar el tatuaje de forma progresiva cuidando la piel. Valoramos la zona previamente para minimizar riesgos; los resultados varían según cada tatuaje y cada persona, por eso trabajamos con una valoración individualizada."),
+                ("¿Cuánto tiempo dura el proceso?", "Es un tratamiento progresivo de varias sesiones espaciadas algunas semanas, para que la piel se recupere entre una y otra. El plan concreto se ajusta en la valoración inicial."),
+            ],
         },
         "ca": {
             "name": "Aclariment de tatuatges",
@@ -32,7 +38,13 @@ SERVICES = [
             "benefits": ["Fragmenta tintes de diversos colors", "Respecta la pell circumdant", "Protocol adaptat a cada tatuatge", "Realitzat per especialistes certificats"],
             "steps": [("Valoració", "Analitzem el tatuatge i la teva pell i estimem el nombre de sessions."), ("Sessions làser", "El làser fragmenta la tinta, que l'organisme elimina de manera natural."), ("Cura i resultat", "Et donem pautes de cura entre sessions per a un resultat òptim.")],
             "tech": ["Làser Q-Switched", "Neodimi:YAG"],
-            "faq": [("Fa mal el tractament?", "Es percep una molèstia tolerable; adaptem la comoditat durant la sessió."), ("Quantes sessions necessito?", "Varia segons el tatuatge; ho estimem a la valoració inicial.")],
+            "faq": [
+                ("Quantes sessions necessito?", "No donem una xifra «a ull»: cada tatuatge i cada pell reaccionen de manera diferent. A la valoració inicial, amb un qüestionari i una petita prova de làser, definim un rang realista segons el teu cas i el teu objectiu."),
+                ("Quant costa?", "Seguim el mateix principi de transparència: el preu real per sessió s'indica després de valorar la pell i comprovar com reacciona al làser. És l'única manera de donar-te una xifra honesta i no una estimació a l'atzar."),
+                ("Fa mal el tractament?", "Es percep una molèstia tolerable. Tenim cura de la teva comoditat durant tota la sessió i adaptem el protocol a la teva pell."),
+                ("S'elimina del tot? Quedarà cicatriu?", "L'objectiu és aclarir o eliminar el tatuatge de manera progressiva tenint cura de la pell. Valorem la zona prèviament per minimitzar riscos; els resultats varien segons cada tatuatge i cada persona, per això treballem amb una valoració individualitzada."),
+                ("Quant dura el procés?", "És un tractament progressiu de diverses sessions espaiades algunes setmanes, perquè la pell es recuperi entre una i altra. El pla concret s'ajusta a la valoració inicial."),
+            ],
         },
         "ru": {
             "name": "Осветление тату",
@@ -44,7 +56,13 @@ SERVICES = [
             "benefits": ["Дробит пигмент разных цветов", "Бережёт окружающую кожу", "Протокол под каждую татуировку", "Выполняют сертифицированные специалисты"],
             "steps": [("Консультация", "Оцениваем татуировку и кожу, прогнозируем число сеансов."), ("Сеансы лазера", "Лазер дробит пигмент, организм выводит его естественно."), ("Уход и результат", "Даём рекомендации между сеансами для лучшего результата.")],
             "tech": ["Лазер Q-Switched", "Neodymium:YAG"],
-            "faq": [("Это больно?", "Ощущается терпимый дискомфорт; заботимся о комфорте во время сеанса."), ("Сколько нужно сеансов?", "Зависит от татуировки; оценим на первой консультации.")],
+            "faq": [
+                ("Сколько нужно сеансов?", "Мы не называем цифру «на глаз»: каждая татуировка и кожа реагируют по-разному. На первой консультации — с опросником и небольшим пробным тестом лазера — определяем реалистичный диапазон под ваш случай и цель."),
+                ("Сколько это стоит?", "Тот же принцип честности: реальную цену за сеанс называем после оценки кожи и проверки, как она реагирует на лазер. Только так можно дать честную цифру, а не наугад."),
+                ("Это больно?", "Ощущается терпимый дискомфорт. Заботимся о вашем комфорте на протяжении всего сеанса и подбираем протокол под вашу кожу."),
+                ("Уйдёт ли татуировка полностью? Останется ли шрам?", "Цель — постепенно осветлить или удалить татуировку, бережно относясь к коже. Предварительно оцениваем зону, чтобы снизить риски; результат зависит от конкретной татуировки и человека, поэтому работаем через индивидуальную оценку."),
+                ("Сколько длится весь процесс?", "Это постепенное лечение из нескольких сеансов с интервалом в несколько недель, чтобы кожа восстанавливалась между ними. Точный план определяем на первой консультации."),
+            ],
         },
         "en": {
             "name": "Tattoo lightening",
@@ -56,7 +74,13 @@ SERVICES = [
             "benefits": ["Shatters multi-colour inks", "Protects surrounding skin", "Protocol tailored to each tattoo", "Performed by certified specialists"],
             "steps": [("Assessment", "We analyse the tattoo and your skin and estimate the number of sessions."), ("Laser sessions", "The laser breaks up the ink, which the body clears naturally."), ("Care & result", "We provide aftercare guidance between sessions for the best result.")],
             "tech": ["Q-Switched laser", "Neodymium:YAG"],
-            "faq": [("Does it hurt?", "There is a tolerable sensation; we keep you comfortable throughout."), ("How many sessions do I need?", "It varies by tattoo; we estimate this at the initial assessment.")],
+            "faq": [
+                ("How many sessions do I need?", "We don't give a number «by eye»: every tattoo and every skin reacts differently. At the initial assessment, with a questionnaire and a small laser test, we define a realistic range based on your case and your goal."),
+                ("How much does it cost?", "We follow the same transparency principle: the real price per session is given after assessing the skin and checking how it reacts to the laser. It's the only way to give you an honest figure rather than a random estimate."),
+                ("Does the treatment hurt?", "There is a tolerable sensation. We keep you comfortable throughout the session and adapt the protocol to your skin."),
+                ("Will it be removed completely? Will there be a scar?", "The aim is to lighten or remove the tattoo gradually while protecting the skin. We assess the area beforehand to minimise risks; results vary by tattoo and person, which is why we work with an individualised assessment."),
+                ("How long does the whole process take?", "It's a gradual treatment of several sessions spaced a few weeks apart, so the skin recovers between them. The specific plan is set at the initial assessment."),
+            ],
         },
     },
     {
