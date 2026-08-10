@@ -170,3 +170,8 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # Desactiva APIs del navegador que el sitio no usa (cámara, micro, geolocalización, pago…)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()"
+    # CSP en modo Report-Only: NO bloquea nada, solo observa. Fuentes permitidas = las que el sitio usa
+    # (Google Fonts, GTM/GA4, Meta Pixel, formulario amoCRM). Pasar a modo activo tras validar en consola.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://forms.amocrm.ru https://*.google-analytics.com https://*.analytics.google.com https://connect.facebook.net https://www.facebook.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net; base-uri 'self'; form-action 'self' https://forms.amocrm.ru; object-src 'none'"
