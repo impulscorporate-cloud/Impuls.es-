@@ -71,8 +71,25 @@ _SCHEMA = {
 }
 JSONLD = '<script type="application/ld+json">' + json.dumps(_SCHEMA, ensure_ascii=False) + '</script>'
 
+
+def faq_jsonld(faq):
+    """FAQPage (schema.org) desde una lista de (pregunta, respuesta).
+    Hace que buscadores de IA (ChatGPT, Google AI) y Google extraigan las Q&A."""
+    if not faq:
+        return ""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in faq
+        ],
+    }
+    return '\n<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
 # ---------- Cabezas / analítica ----------
-def head(lang, title, desc, canonical, alts):
+def head(lang, title, desc, canonical, alts, faq=None):
     hreflang = "\n".join(
         f'<link rel="alternate" hreflang="{hl}" href="{DOMAIN}{u}" />' for hl, u in alts.items()
     ) + f'\n<link rel="alternate" hreflang="x-default" href="{DOMAIN}{alts["es"]}" />'
@@ -94,7 +111,7 @@ def head(lang, title, desc, canonical, alts):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/styles.css" />
-{JSONLD}
+{JSONLD}{faq_jsonld(faq)}
 <script>
 (function(){{
   window.__impulsLoadAnalytics=function(){{
@@ -286,7 +303,7 @@ def redirect_page(url):
 def render_home(lang):
     c = HOME_CONTENT[lang]; u = UI[lang]; home = HOME[lang]
     alts = {L: HOME[L] for L in LANGS}
-    out = head(lang, c["title"], c["description"], home, alts)
+    out = head(lang, c["title"], c["description"], home, alts, faq=c["faq"])
     out += header(lang, alts)
     # hero
     trust = "".join(f'<div><div class="num">{esc(n)}</div><div class="lbl">{esc(l)}</div></div>' for n, l in c["trust"])
@@ -424,7 +441,7 @@ def render_service(lang, s):
     else:
         title = f'{d["name"]} {u["seo_title_suffix"]} · Impuls'
     desc = f'{d["tag"]}. {u["seo_desc_suffix"]}'
-    out = head(lang, title, desc, alts[lang], alts)
+    out = head(lang, title, desc, alts[lang], alts, faq=d.get("faq"))
     out += header(lang, alts)
     # hero servicio
     intro = "".join(f"<p>{esc(p)}</p>" for p in d["intro"])
