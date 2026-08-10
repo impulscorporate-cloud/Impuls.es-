@@ -314,7 +314,15 @@ def render_home(lang):
             href, attrs, arrow = s["external"], ' target="_blank" rel="noopener"', "↗"
         else:
             href, attrs, arrow = f'{home}{s["slug"]}/', '', "→"
-        # foto real por servicio (assets/cards/<slug>.jpg, generadas optimizadas ~760px).
+        # Wellness (Salud y bienestar): tarjeta con icono, como antes de las fotos.
+        if s.get("group") == "wellness":
+            return f'''<article class="card">
+        <div class="card__icon">{icon(s["slug"])}</div>
+        <h3>{esc(d["name"])}</h3>
+        <p>{esc(d["tag"])}</p>
+        <a class="card__link" href="{href}"{attrs}>{esc(d["name"])} {arrow}</a>
+      </article>'''
+        # Servicios láser: foto real arriba (assets/cards/<slug>.jpg, optimizadas ~760px).
         # alt descriptivo (SEO) y lazy + aspect-ratio en CSS para no romper CLS.
         photo = f'/assets/cards/{s["slug"]}.jpg'
         alt = esc(f'{d["name"]} · Impuls Longevity Barcelona')
