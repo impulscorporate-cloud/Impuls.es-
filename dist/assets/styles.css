@@ -192,6 +192,12 @@ h1, h2, h3, h4 {
 .diag__text p { color: var(--body); margin: 0 0 8px; font-size: .98rem; }
 .diag__cond { color: var(--muted); font-size: .84rem; }
 
+/* ---------- Club Impuls Longevity (bloque de ventaja) ---------- */
+.club { background: var(--brand-tint); border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 38px); margin-top: 28px; border-left: 4px solid var(--brand-ink); }
+.club__badge { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-ink); margin-bottom: 10px; }
+.club__title { font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin: 0 0 10px; }
+.club__text { color: var(--body); font-size: 1rem; line-height: 1.55; max-width: 72ch; margin: 0; }
+
 /* ---------- Foto de equipo ---------- */
 .team-photo { border-radius: var(--radius-img); overflow: hidden; box-shadow: var(--shadow-card); }
 .team-photo img { width: 100%; height: auto; display: block; }

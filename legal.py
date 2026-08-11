@@ -370,8 +370,8 @@ PROMO = {
                 "desc": [
                     "Un programa anual e innovador para prevenir el envejecimiento de la piel: frenamos la aparición de nuevas arrugas y la flacidez, mejoramos la firmeza y conseguimos una piel más luminosa, sana y joven.",
                 ],
-                "list_title": "Formato",
-                "list": ["Sesiones de 20 minutos", "Indoloras y sin tiempo de recuperación", "Aptas para cualquier época del año"],
+                "list_title": "La primera sesión incluye",
+                "list": ["Diagnóstico facial con analizador de piel profesional", "Plan de tratamiento personalizado para 12 meses (matrícula anual)", "Primera sesión de láser Fotona (20 min, indolora)", "Precio fijo de 150 € por sesión durante todo el año"],
                 "price": [("Primera sesión", "370 €", "220 € matrícula anual + 150 € 1ª sesión"), ("Tarifa plana", "150 €", "por sesión · durante 12 meses")],
             },
             {
@@ -383,11 +383,12 @@ PROMO = {
                     "A diferencia de una sola sesión, este enfoque logra resultados visibles y duraderos, no temporales.",
                 ],
                 "list_title": "La primera sesión incluye",
-                "list": ["Diagnóstico profesional de tu piel", "Protocolo personalizado para tu caso", "Sesión completa de láser Fotona", "Pauta de cuidado en casa"],
+                "list": ["Diagnóstico facial con analizador de piel profesional", "Plan de tratamiento láser personalizado para 12 meses (zonas y calendario)", "Elaboración de la pauta médica para los primeros 3 meses (servicio valorado en 120 €, incluido)", "Sesión completa de láser Fotona en las zonas a tratar"],
                 "price": [("Primera sesión", "450 €", ""), ("Sesiones siguientes", "160 €", "por sesión · fijas durante todo el año")],
             },
         ],
         "diag": {"prices": [("Reserva de cita", "15 €"), ("Diagnóstico", "50 €")], "note": "La reserva de cita cuesta 15 € y confirma tu hora; ese importe se descuenta íntegramente del diagnóstico (50 €).", "cond": "Si realizas o abonas un tratamiento con láser el mismo día o dentro del mes siguiente, el importe del diagnóstico se descuenta íntegramente del tratamiento. Válido solo para tratamientos con tecnología láser; no se aplica a cremas ni a otros productos o tratamientos que no sean con láser."},
+        "club": {"badge": "Ventaja incluida", "title": "Club Impuls Longevity", "text": "Al contratar un programa anual como Fotona Lift o PigmentControl te conviertes automáticamente en miembro del Club Impuls Longevity durante toda la vigencia del programa. Como miembro accedes a precios especiales y a tratamientos exclusivos que no están disponibles para quienes no son socios."},
         "cta_note": "Los programas se personalizan tras una valoración previa. Escríbenos por WhatsApp o solicita tu cita y te informamos sin compromiso.",
     },
     "ca": {
@@ -416,8 +417,8 @@ PROMO = {
                 "desc": [
                     "Un programa anual i innovador per prevenir l'envelliment de la pell: frenem l'aparició de noves arrugues i la flacciditat, millorem la fermesa i aconseguim una pell més lluminosa, sana i jove.",
                 ],
-                "list_title": "Format",
-                "list": ["Sessions de 20 minuts", "Indolores i sense temps de recuperació", "Aptes per a qualsevol època de l'any"],
+                "list_title": "La primera sessió inclou",
+                "list": ["Diagnòstic facial amb analitzador de pell professional", "Pla de tractament personalitzat per a 12 mesos (matrícula anual)", "Primera sessió de làser Fotona (20 min, indolora)", "Preu fix de 150 € per sessió durant tot l'any"],
                 "price": [("Primera sessió", "370 €", "220 € matrícula anual + 150 € 1a sessió"), ("Tarifa plana", "150 €", "per sessió · durant 12 mesos")],
             },
             {
@@ -429,11 +430,12 @@ PROMO = {
                     "A diferència d'una sola sessió, aquest enfocament aconsegueix resultats visibles i duradors, no temporals.",
                 ],
                 "list_title": "La primera sessió inclou",
-                "list": ["Diagnòstic professional de la teva pell", "Protocol personalitzat per al teu cas", "Sessió completa de làser Fotona", "Pauta de cura a casa"],
+                "list": ["Diagnòstic facial amb analitzador de pell professional", "Pla de tractament làser personalitzat per a 12 mesos (zones i calendari)", "Elaboració de la pauta mèdica per als primers 3 mesos (servei valorat en 120 €, inclòs)", "Sessió completa de làser Fotona a les zones a tractar"],
                 "price": [("Primera sessió", "450 €", ""), ("Sessions següents", "160 €", "per sessió · fixes durant tot l'any")],
             },
         ],
         "diag": {"prices": [("Reserva de cita", "15 €"), ("Diagnòstic", "50 €")], "note": "La reserva de cita costa 15 € i confirma la teva hora; aquest import es descompta íntegrament del diagnòstic (50 €).", "cond": "Si fas o abones un tractament amb làser el mateix dia o dins del mes següent, l'import del diagnòstic es descompta íntegrament del tractament. Vàlid només per a tractaments amb tecnologia làser; no s'aplica a cremes ni a altres productes o tractaments que no siguin amb làser."},
+        "club": {"badge": "Avantatge inclòs", "title": "Club Impuls Longevity", "text": "En contractar un programa anual com Fotona Lift o PigmentControl esdevens automàticament membre del Club Impuls Longevity durant tota la vigència del programa. Com a membre accedeixes a preus especials i a tractaments exclusius que no estan disponibles per a qui no és soci."},
         "cta_note": "Els programes es personalitzen després d'una valoració prèvia. Escriu-nos per WhatsApp o demana cita i t'informem sense compromís.",
     },
     "ru": {
@@ -462,8 +464,8 @@ PROMO = {
                 "desc": [
                     "Инновационная годовая программа профилактики старения кожи: останавливаем появление новых морщин и дряблость, повышаем упругость и делаем кожу более сияющей, здоровой и молодой.",
                 ],
-                "list_title": "Формат",
-                "list": ["Сеансы по 20 минут", "Безболезненно, без периода восстановления", "Подходит в любое время года"],
+                "list_title": "Первый сеанс включает",
+                "list": ["Диагностику лица на профессиональном анализаторе кожи", "Индивидуальный план на 12 месяцев (годовая регистрация)", "Первый сеанс лазера Fotona (20 мин, безболезненно)", "Фиксированную цену 150 € за сеанс весь год"],
                 "price": [("Первый сеанс", "370 €", "220 € годовая регистрация + 150 € 1-й сеанс"), ("Единый тариф", "150 €", "за сеанс · в течение 12 месяцев")],
             },
             {
@@ -475,11 +477,12 @@ PROMO = {
                     "В отличие от разовой процедуры, такой подход даёт заметный и стойкий результат, а не временный.",
                 ],
                 "list_title": "Первый сеанс включает",
-                "list": ["Профессиональную диагностику кожи", "Индивидуальный протокол под ваш случай", "Полный сеанс лазера Fotona", "Рекомендации по домашнему уходу"],
+                "list": ["Диагностику лица на профессиональном анализаторе кожи", "Индивидуальный план лазерного лечения на 12 месяцев (зоны и график)", "Составление медицинской схемы на первые 3 месяца (услуга стоимостью 120 €, включена)", "Полный сеанс лазера Fotona по обрабатываемым зонам"],
                 "price": [("Первый сеанс", "450 €", ""), ("Последующие сеансы", "160 €", "за сеанс · фиксировано весь год")],
             },
         ],
         "diag": {"prices": [("Бронь встречи", "15 €"), ("Диагностика", "50 €")], "note": "Бронь встречи стоит 15 € и подтверждает ваше время; эта сумма полностью вычитается из стоимости диагностики (50 €).", "cond": "Если вы проходите или оплачиваете лазерную процедуру в тот же день или в течение следующего месяца, стоимость диагностики полностью вычитается из стоимости процедуры. Действует только для процедур на лазере; не распространяется на кремы и другие продукты или процедуры, кроме лазерных."},
+        "club": {"badge": "Входит в программу", "title": "Клуб Impuls Longevity", "text": "Приобретая годовую программу — Fotona Lift или PigmentControl — вы автоматически становитесь членом клуба Impuls Longevity на весь срок действия программы. Как член клуба вы получаете доступ к специальным ценам и эксклюзивным процедурам, недоступным для тех, кто не состоит в клубе."},
         "cta_note": "Программы персонализируются после предварительной консультации. Напишите в WhatsApp или запишитесь — расскажем без обязательств.",
     },
     "en": {
@@ -508,8 +511,8 @@ PROMO = {
                 "desc": [
                     "An innovative annual program to prevent skin ageing: we slow the appearance of new wrinkles and sagging, improve firmness and achieve more luminous, healthy and youthful skin.",
                 ],
-                "list_title": "Format",
-                "list": ["20-minute sessions", "Painless, with no downtime", "Suitable any time of year"],
+                "list_title": "The first session includes",
+                "list": ["Facial diagnosis with a professional skin analyser", "Personalised 12-month treatment plan (annual registration)", "First Fotona laser session (20 min, painless)", "Fixed price of €150 per session all year"],
                 "price": [("First session", "€370", "€220 annual registration + €150 1st session"), ("Flat rate", "€150", "per session · for 12 months")],
             },
             {
@@ -521,11 +524,12 @@ PROMO = {
                     "Unlike a single session, this approach achieves visible, lasting results, not temporary ones.",
                 ],
                 "list_title": "The first session includes",
-                "list": ["Professional skin diagnosis", "Personalised protocol for your case", "Full Fotona laser session", "Home care guidance"],
+                "list": ["Facial diagnosis with a professional skin analyser", "Personalised 12-month laser treatment plan (areas and schedule)", "Medical treatment plan for the first 3 months (service valued at €120, included)", "Full Fotona laser session on the target areas"],
                 "price": [("First session", "€450", ""), ("Following sessions", "€160", "per session · fixed all year")],
             },
         ],
         "diag": {"prices": [("Booking fee", "€15"), ("Diagnosis", "€50")], "note": "The booking fee is €15 and secures your appointment; this amount is fully deducted from the diagnosis (€50).", "cond": "If you have or pay for a laser treatment the same day or within the following month, the diagnosis fee is fully deducted from the treatment. Valid only for treatments with laser technology; it does not apply to creams or to other products or treatments that are not laser-based."},
+        "club": {"badge": "Included benefit", "title": "Impuls Longevity Club", "text": "When you purchase an annual program such as Fotona Lift or PigmentControl, you automatically become a member of the Impuls Longevity Club for the entire duration of the program. As a member you get access to special prices and exclusive treatments that are not available to non-members."},
         "cta_note": "Programs are personalised after an initial assessment. Message us on WhatsApp or book your appointment and we'll tell you more, with no obligation.",
     },
 }

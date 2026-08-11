@@ -676,8 +676,15 @@ def render_promo(lang):
       <div class="diag__prices">{dg_prices}</div>
       <div class="diag__text"><p>{esc(dg["note"])}</p><p class="diag__cond">{esc(dg["cond"])}</p></div>
     </div>'''
+    cb = p["club"]
+    club_html = f'''<div class="club">
+      <span class="club__badge">{esc(cb["badge"])}</span>
+      <h3 class="club__title">{esc(cb["title"])}</h3>
+      <p class="club__text">{esc(cb["text"])}</p>
+    </div>'''
     out += f'''<section class="section"><div class="container">
     {blocks}
+    {club_html}
     {diag_html}
     <p class="prose" style="margin-top:20px">{esc(p["cta_note"])}</p>
   </div></section>
