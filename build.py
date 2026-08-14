@@ -343,8 +343,15 @@ def render_home(lang):
         # alt descriptivo (SEO) y lazy + aspect-ratio en CSS para no romper CLS.
         photo = f'/assets/cards/{s["slug"]}.jpg'
         alt = esc(f'{d["name"]} · Impuls Longevity Barcelona')
-        return f'''<article class="card card--photo">
-        <div class="card__media"><img src="{photo}" alt="{alt}" loading="lazy" decoding="async" /></div>
+        # Destacado premium (marco dorado + pestaña) para tratamientos estrella: 4Glow, 4D Fotona.
+        badge = s.get("badge")
+        feat, tab = "", ""
+        if badge and badge.get(lang):
+            feat = " card--featured"
+            star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>'
+            tab = f'<span class="card__tab">{star}{esc(badge[lang])}</span>'
+        return f'''<article class="card card--photo{feat}">
+        {tab}<div class="card__media"><img src="{photo}" alt="{alt}" loading="lazy" decoding="async" /></div>
         <div class="card__body">
         <h3>{esc(d["name"])}</h3>
         <p>{esc(d["tag"])}</p>

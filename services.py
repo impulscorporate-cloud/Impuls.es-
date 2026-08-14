@@ -634,6 +634,7 @@ SERVICES = [
         "slug": "rejuvenecimiento-4d-fotona",
         "img": "/assets/benefits.jpg",
         "external": "https://4dfotona.es/",  # sitio separado (como en el original)
+        "badge": {"es": "Estrella", "ca": "Estrella", "ru": "Флагман", "en": "Signature"},
         "es": {
             "name": "Rejuvenecimiento 4D Fotona",
             "tag": "Efecto lifting sin cirugía, dentro y fuera de la piel",
@@ -819,6 +820,7 @@ SERVICES = [
         "img": "/assets/clinic-facial.jpg",
         "img2": "/assets/svc2-rejuvenecimiento-cutaneo.jpg",
         "external": "https://fotona4glow.es/",
+        "badge": {"es": "Exclusivo", "ca": "Exclusiu", "ru": "Эксклюзив", "en": "Exclusive"},
         "es": {
             "name": "Fotona 4Glow",
             "tag": "Rejuvenecimiento facial 4 en 1, sin agujas ni cirugía",
