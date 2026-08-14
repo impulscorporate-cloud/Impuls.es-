@@ -431,6 +431,51 @@ def render_home(lang):
     out += footer(lang)
     return out
 
+# ---------- Enlazado interno: servicios relacionados ----------
+# Mejora el SEO on-page distribuyendo autoridad entre páginas temáticamente próximas.
+# Solo apunta a servicios internos (sin "external"), para no enviar el link fuera del sitio.
+RELATED = {
+    "eliminacion-de-tatuajes": ["eliminacion-de-pigmentacion", "rejuvenecimiento-cutaneo", "cicatrices-y-estrias"],
+    "rejuvenecimiento-cutaneo": ["cicatrices-y-estrias", "eliminacion-de-pigmentacion", "tratamiento-del-acne"],
+    "eliminacion-de-pigmentacion": ["eliminacion-de-tatuajes", "rejuvenecimiento-cutaneo", "tratamiento-del-acne"],
+    "depilacion-laser": ["rejuvenecimiento-cutaneo", "aranas-vasculares-rosacea", "tratamiento-del-acne"],
+    "tratamiento-del-acne": ["cicatrices-y-estrias", "eliminacion-de-pigmentacion", "rejuvenecimiento-cutaneo"],
+    "aranas-vasculares-rosacea": ["rejuvenecimiento-cutaneo", "tratamiento-del-acne", "depilacion-laser"],
+    "cicatrices-y-estrias": ["rejuvenecimiento-cutaneo", "tratamiento-del-acne", "eliminacion-de-pigmentacion"],
+    "onicomicosis": ["eliminacion-de-neoplasias", "depilacion-laser", "aranas-vasculares-rosacea"],
+    "eliminacion-de-neoplasias": ["onicomicosis", "cicatrices-y-estrias", "eliminacion-de-pigmentacion"],
+}
+_RELATED_LABEL = {"es": "Servicios relacionados", "ca": "Serveis relacionats", "ru": "Похожие услуги", "en": "Related services"}
+_MORE_LABEL = {"es": "Más sobre este tratamiento", "ca": "Més sobre aquest tractament", "ru": "Подробнее об этой процедуре", "en": "More about this treatment"}
+
+def related_services(lang, s):
+    slugs = RELATED.get(s["slug"], [])
+    if not slugs:
+        return ""
+    home = HOME[lang]
+    by_slug = {x["slug"]: x for x in SERVICES}
+    cards = ""
+    for sl in slugs:
+        rs = by_slug.get(sl)
+        if not rs or rs.get("external"):
+            continue
+        d = rs[lang]
+        cards += f'''<article class="card">
+        <div class="card__icon">{icon(sl)}</div>
+        <h3>{esc(d["name"])}</h3>
+        <p>{esc(d["tag"])}</p>
+        <a class="card__link" href="{home}{sl}/">{esc(d["name"])} →</a>
+      </article>'''
+    if not cards:
+        return ""
+    return f'''<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">{esc(_RELATED_LABEL[lang])}</span><h2>{esc(_RELATED_LABEL[lang])}</h2></div>
+    <div class="cards">{cards}</div>
+  </div>
+</section>
+'''
+
 # ---------- Página de servicio ----------
 def render_service(lang, s):
     d = s[lang]; u = UI[lang]; home = HOME[lang]; slug = s["slug"]
@@ -506,6 +551,7 @@ def render_service(lang, s):
   </div>
 </section>
 '''
+    out += related_services(lang, s)
     out += cta_form(lang, slug)
     out += footer(lang)
     return out
@@ -741,6 +787,11 @@ def render_post(lang, post):
     if post.get("sources"):
         links = "".join(f'<li><a href="{url}" target="_blank" rel="noopener nofollow">{esc(name)}</a></li>' for name, url in post["sources"])
         body += f'<div class="prose sources"><h2>{esc(b["sources"])}</h2><ul>{links}</ul><p><small>{esc(b["sources_note"])}</small></p></div>'
+    sv = post.get("service")
+    if sv:
+        svc = next((x for x in SERVICES if x["slug"] == sv and not x.get("external")), None)
+        if svc:
+            body += f'<div class="prose"><p><a href="{home}{sv}/">{esc(_MORE_LABEL[lang])}: {esc(svc[lang]["name"])} →</a></p></div>'
     out += f'<section class="section"><div class="container">{body}</div></section>\n'
     out += cta_form(lang, f"blog-{slug}")
     out += footer(lang)

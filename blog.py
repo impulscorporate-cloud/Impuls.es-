@@ -15,6 +15,7 @@ BLOG_POSTS = [
     {
         "slug": "rosacea-9-errores",
         "img": "/assets/hero.jpg",
+        "service": "aranas-vasculares-rosacea",
         "es": {
             "title": "Rosácea: 9 errores que arruinan tu piel",
             "excerpt": "La rosácea es una enfermedad crónica de la piel. Descubre qué debes evitar y cómo aliviarla.",
@@ -275,6 +276,7 @@ BLOG_POSTS = [
     {
         "slug": "depilacion-laser-cuantas-sesiones",
         "img": "/assets/svc-depilacion-laser.jpg",
+        "service": "depilacion-laser",
         "sources": [
             ("Academia Española de Dermatología y Venereología (AEDV)", "https://aedv.es"),
             ("American Academy of Dermatology (AAD)", "https://www.aad.org"),
@@ -324,6 +326,7 @@ BLOG_POSTS = [
     {
         "slug": "eliminar-tatuajes-laser-como-funciona",
         "img": "/assets/svc-eliminacion-de-tatuajes.jpg",
+        "service": "eliminacion-de-tatuajes",
         "sources": [
             ("American Academy of Dermatology (AAD)", "https://www.aad.org"),
             ("U.S. Food & Drug Administration (FDA)", "https://www.fda.gov"),
@@ -367,6 +370,56 @@ BLOG_POSTS = [
                 ("How many sessions?", ["It depends on the size, age, depth and colours of the ink, as well as your skin type. Professional tattoos usually need more sessions than amateur ones. The estimate is made at the initial assessment."]),
                 ("What to expect and aftercare", ["An interval is left between sessions so the skin recovers and the body clears the fragmented ink. Protecting the area from the sun and following aftercare guidance is key for a better result and lower risk of marks."]),
                 ("Safety", ["It should always be performed by qualified staff after a skin assessment. At Impuls Longevity (Barcelona) we work with a Q-Switched laser and design a personalised protocol for each tattoo."]),
+            ],
+        },
+    },
+    {
+        "slug": "onicomicosis-laser-como-funciona",
+        "img": "/assets/svc-onicomicosis.jpg",
+        "service": "onicomicosis",
+        "sources": [
+            ("Academia Española de Dermatología y Venereología (AEDV)", "https://aedv.es"),
+            ("American Academy of Dermatology (AAD)", "https://www.aad.org"),
+            ("Fotona", "https://www.fotona.com"),
+        ],
+        "es": {
+            "title": "Onicomicosis: cómo funciona el tratamiento láser de los hongos de las uñas",
+            "excerpt": "Cómo actúa el láser sobre el hongo de la uña, cuántas sesiones suelen hacer falta y cómo evitar que vuelva, en Barcelona.",
+            "sections": [
+                ("", ["La onicomicosis es una infección por hongos que engrosa, decolora y deforma la uña. El tratamiento láser actúa por calor sobre el hongo alojado en la uña y el lecho ungueal, una alternativa a los antifúngicos orales prolongados y a sus controles analíticos."]),
+                ("¿Cuántas sesiones necesito?", ["Depende del número de uñas afectadas y del grado de la infección. Suelen precisarse varias sesiones espaciadas. Como la uña crece despacio, la mejora se aprecia de forma progresiva a medida que va saliendo uña sana desde la base."]),
+                ("Qué esperar y cuidados", ["Es un procedimiento cómodo y prácticamente sin tiempo de recuperación: se percibe un calor tolerable y puedes retomar tu actividad el mismo día. Acude con las uñas limpias y sin esmalte. Para reducir el riesgo de recaída ayuda secar bien los pies, usar calzado transpirable y desinfectar calzado y calcetines."]),
+                ("Seguridad y resultados", ["Debe realizarse por personal cualificado y tras valorar la uña; los resultados varían según cada caso. En Impuls Longevity (Barcelona) trabajamos con láser Nd:YAG y diseñamos un protocolo personalizado según el grado de afectación."]),
+            ],
+        },
+        "ca": {
+            "title": "Onicomicosi: com funciona el tractament làser dels fongs de les ungles",
+            "excerpt": "Com actua el làser sobre el fong de l'ungla, quantes sessions solen caldre i com evitar que torni, a Barcelona.",
+            "sections": [
+                ("", ["L'onicomicosi és una infecció per fongs que engruixeix, descolora i deforma l'ungla. El tractament làser actua per calor sobre el fong allotjat a l'ungla i el llit ungueal, una alternativa als antifúngics orals prolongats i als seus controls analítics."]),
+                ("Quantes sessions necessito?", ["Depèn del nombre d'ungles afectades i del grau de la infecció. Solen caldre diverses sessions espaiades. Com que l'ungla creix a poc a poc, la millora s'aprecia de manera progressiva a mesura que va sortint ungla sana des de la base."]),
+                ("Què esperar i cures", ["És un procediment còmode i pràcticament sense temps de recuperació: es percep una calor tolerable i pots reprendre la teva activitat el mateix dia. Vine amb les ungles netes i sense esmalt. Per reduir el risc de recaiguda ajuda eixugar bé els peus, fer servir calçat transpirable i desinfectar calçat i mitjons."]),
+                ("Seguretat i resultats", ["S'ha de fer per personal qualificat i després de valorar l'ungla; els resultats varien segons cada cas. A Impuls Longevity (Barcelona) treballem amb làser Nd:YAG i dissenyem un protocol personalitzat segons el grau d'afectació."]),
+            ],
+        },
+        "ru": {
+            "title": "Онихомикоз: как работает лазерное лечение грибка ногтей",
+            "excerpt": "Как лазер действует на грибок ногтя, сколько обычно нужно сеансов и как избежать рецидива.",
+            "sections": [
+                ("", ["Онихомикоз — грибковая инфекция, из-за которой ноготь утолщается, меняет цвет и деформируется. Лазерное лечение действует теплом на грибок в ногтевой пластине и ложе — это альтернатива длительному приёму противогрибковых таблеток и связанным с ними анализам."]),
+                ("Сколько нужно сеансов?", ["Зависит от числа поражённых ногтей и степени инфекции. Обычно нужно несколько сеансов с интервалом. Поскольку ноготь растёт медленно, улучшение заметно постепенно, по мере отрастания здорового ногтя от основания."]),
+                ("Чего ожидать и уход", ["Процедура комфортная и практически без периода восстановления: ощущается терпимое тепло, вернуться к делам можно в тот же день. Приходите с чистыми ногтями без лака. Чтобы снизить риск рецидива, тщательно просушивайте стопы, носите дышащую обувь и дезинфицируйте обувь и носки."]),
+                ("Безопасность и результат", ["Процедуру должен выполнять квалифицированный специалист после оценки ногтя; результат индивидуален. В Impuls Longevity (Барселона) мы работаем на лазере Nd:YAG и составляем индивидуальный протокол по степени поражения."]),
+            ],
+        },
+        "en": {
+            "title": "Onychomycosis: how laser treatment for nail fungus works",
+            "excerpt": "How the laser acts on the nail fungus, how many sessions are usually needed and how to stop it coming back.",
+            "sections": [
+                ("", ["Onychomycosis is a fungal infection that thickens, discolours and deforms the nail. Laser treatment acts with heat on the fungus in the nail plate and nail bed — an alternative to prolonged oral antifungals and their monitoring."]),
+                ("How many sessions?", ["It depends on how many nails are affected and how advanced the infection is. Several spaced sessions are usually needed. Because the nail grows slowly, the improvement shows gradually as healthy nail grows from the base."]),
+                ("What to expect and aftercare", ["It is a comfortable procedure with virtually no downtime: a tolerable warmth is felt and you can resume your activity the same day. Come with clean nails and no polish. To lower the risk of recurrence, dry your feet well, wear breathable footwear and disinfect shoes and socks."]),
+                ("Safety and results", ["It should be performed by qualified staff after assessing the nail; results vary from case to case. At Impuls Longevity (Barcelona) we work with an Nd:YAG laser and design a personalised protocol based on severity."]),
             ],
         },
     },
