@@ -5,7 +5,7 @@ Ejecutar:  python3 build.py
 Lee content.py + services.py y escribe HTML limpio en la carpeta del sitio.
 """
 import os, html, json, re
-from content import LANGS, HOME, UI, CONTACT, BRANDS, HOME_CONTENT, COMPANY
+from content import LANGS, HOME, UI, CONTACT, BRANDS, HOME_CONTENT, COMPANY, REVIEWS, REVIEW_UI
 from services import SERVICES
 from pages import ABOUT, CONTACTP
 from legal import LEGAL, PROMO, UPDATED, TRANS_NOTE
@@ -146,6 +146,7 @@ def header(lang, alts):
     </ul>
     <div class="nav__right">
       <div class="lang" aria-label="Idioma">{langlinks}</div>
+      <a class="nav__tel" href="tel:{CONTACT["phones_tel"][0]}" aria-label="{esc(_CALL_LABEL[lang])} {CONTACT["phones"][0]}">{_TEL_SVG}</a>
       <a class="btn btn-primary" href="#cita">{esc(UI[lang]["cta_nav"])}</a>
       <button class="nav__toggle" aria-label="Menu" onclick="var n=this.closest('.nav');n.dataset.open=n.dataset.open==='true'?'false':'true'">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -245,6 +246,12 @@ def footer(lang):
   </div>
 </footer>
 <a class="wa-float" href="https://wa.me/{CONTACT["whatsapp"]}" aria-label="WhatsApp" target="_blank" rel="noopener">{WA_SVG}</a>
+
+<nav class="mobile-cta" aria-label="{esc(_BOOK_LABEL[lang])}">
+  <a class="mobile-cta__item" href="tel:{CONTACT["phones_tel"][0]}">{_TEL_SVG}<span>{esc(_CALL_LABEL[lang])}</span></a>
+  <a class="mobile-cta__item" href="https://wa.me/{CONTACT["whatsapp"]}" target="_blank" rel="noopener">{WA_SVG}<span>WhatsApp</span></a>
+  <a class="mobile-cta__item mobile-cta__book" href="{home}#cita">{_CAL_SVG}<span>{esc(_BOOK_LABEL[lang])}</span></a>
+</nav>
 
 <div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-label="Cookies">
   <p>{esc(u["cookie_text"])} <a href="{home}politica-de-cookies/">{esc(u["cookie_more"])}</a></p>
@@ -434,6 +441,28 @@ def render_home(lang):
   </div>
 </section>
 '''
+    # opiniones (prueba social real de Google) — justo antes del formulario
+    rv = REVIEW_UI[lang]
+    STAR = '<svg class="rv-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>'
+    rev_cards = ""
+    for r in REVIEWS:
+        stars = f'<div class="review__stars" role="img" aria-label="{r["stars"]}/5">' + STAR * r["stars"] + '</div>'
+        rev_cards += f'''<article class="review">
+        <div class="review__head">
+          <span class="review__ava" aria-hidden="true">{esc(r["name"][0])}</span>
+          <div class="review__id"><span class="review__name">{esc(r["name"])}</span>{stars}</div>
+          <span class="review__src">{esc(rv["src"])}</span>
+        </div>
+        <p class="review__text">{esc(r["text"])}</p>
+      </article>'''
+    out += f'''<section class="section" id="opiniones">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">{esc(rv["eyebrow"])}</span><h2>{esc(rv["h2"])}</h2></div>
+    <div class="reviews">{rev_cards}</div>
+    <p class="reviews__note">{esc(rv["note"])}</p>
+  </div>
+</section>
+'''
     out += cta_form(lang, "home")
     out += footer(lang)
     return out
@@ -454,6 +483,10 @@ RELATED = {
 }
 _RELATED_LABEL = {"es": "Servicios relacionados", "ca": "Serveis relacionats", "ru": "Похожие услуги", "en": "Related services"}
 _MORE_LABEL = {"es": "Más sobre este tratamiento", "ca": "Més sobre aquest tractament", "ru": "Подробнее об этой процедуре", "en": "More about this treatment"}
+_CALL_LABEL = {"es": "Llamar", "ca": "Trucar", "ru": "Позвонить", "en": "Call"}
+_BOOK_LABEL = {"es": "Pedir cita", "ca": "Demana cita", "ru": "Записаться", "en": "Book"}
+_TEL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.6a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>'
+_CAL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>'
 
 def related_services(lang, s):
     slugs = RELATED.get(s["slug"], [])

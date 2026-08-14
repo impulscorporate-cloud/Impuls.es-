@@ -184,8 +184,8 @@ HOME_CONTENT = {
     "es": {
         "title": "Impuls Longevity · Estética láser avanzada Fotona · Barcelona",
         "description": "Impuls Longevity — clínica de estética láser en Barcelona. Tecnología Fotona StarWalker y SP Dynamis: aclaración de tatuajes, depilación, rejuvenecimiento, acné y manchas. Más de 15 años de experiencia.",
-        "hero_eyebrow": "Estética láser · Barcelona",
-        "hero_h1_a": "El mejor tratamiento para", "hero_h1_accent": "tu piel",
+        "hero_eyebrow": "Tecnología láser Fotona",
+        "hero_h1_a": "Estética láser avanzada en", "hero_h1_accent": "Barcelona",
         "hero_lead": "En Impuls Longevity trabajamos con la tecnología láser Fotona StarWalker y SP Dynamis, líderes mundiales en estética avanzada. Tratamientos personalizados, resultados visibles, naturales y seguros.",
         "hero_cta1": "Pide tu cita", "hero_cta2": "Ver servicios",
         "trust": [("+15", "años de experiencia"), ("Fotona", "tecnología líder mundial"), ("100%", "protocolos personalizados")],
@@ -232,8 +232,8 @@ HOME_CONTENT = {
     "ca": {
         "title": "Impuls Longevity · Estètica làser avançada Fotona · Barcelona",
         "description": "Impuls Longevity — clínica d'estètica làser a Barcelona. Tecnologia Fotona StarWalker i SP Dynamis: aclariment de tatuatges, depilació, rejoveniment, acne i taques. Més de 15 anys d'experiència.",
-        "hero_eyebrow": "Estètica làser · Barcelona",
-        "hero_h1_a": "El millor tractament per a", "hero_h1_accent": "la teva pell",
+        "hero_eyebrow": "Tecnologia làser Fotona",
+        "hero_h1_a": "Estètica làser avançada a", "hero_h1_accent": "Barcelona",
         "hero_lead": "A Impuls Longevity treballem amb la tecnologia làser Fotona StarWalker i SP Dynamis, líders mundials en estètica avançada. Tractaments personalitzats, resultats visibles, naturals i segurs.",
         "hero_cta1": "Demana cita", "hero_cta2": "Veure serveis",
         "trust": [("+15", "anys d'experiència"), ("Fotona", "tecnologia líder mundial"), ("100%", "protocols personalitzats")],
@@ -280,8 +280,8 @@ HOME_CONTENT = {
     "ru": {
         "title": "Impuls Longevity · Лазерная эстетика Fotona · Барселона",
         "description": "Impuls Longevity — клиника лазерной эстетики в Барселоне. Технология Fotona StarWalker и SP Dynamis: осветление тату, депиляция, омоложение, акне и пигментация. Более 15 лет опыта.",
-        "hero_eyebrow": "Лазерная эстетика · Барселона",
-        "hero_h1_a": "Лучший уход за", "hero_h1_accent": "вашей кожей",
+        "hero_eyebrow": "Технология Fotona",
+        "hero_h1_a": "Лазерная эстетика в", "hero_h1_accent": "Барселоне",
         "hero_lead": "В Impuls Longevity мы работаем на лазерах Fotona StarWalker и SP Dynamis — мировых лидерах эстетической медицины. Индивидуальные протоколы, заметный, естественный и безопасный результат.",
         "hero_cta1": "Записаться", "hero_cta2": "Все услуги",
         "trust": [("15+", "лет опыта"), ("Fotona", "мировой лидер"), ("100%", "индивидуальные протоколы")],
@@ -328,8 +328,8 @@ HOME_CONTENT = {
     "en": {
         "title": "Impuls Longevity · Advanced Fotona laser aesthetics · Barcelona",
         "description": "Impuls Longevity — laser aesthetics clinic in Barcelona. Fotona StarWalker & SP Dynamis technology: tattoo lightening, hair removal, rejuvenation, acne and pigmentation. 15+ years of experience.",
-        "hero_eyebrow": "Laser aesthetics · Barcelona",
-        "hero_h1_a": "The best care for", "hero_h1_accent": "your skin",
+        "hero_eyebrow": "Fotona laser technology",
+        "hero_h1_a": "Advanced laser aesthetics in", "hero_h1_accent": "Barcelona",
         "hero_lead": "At Impuls Longevity we work with Fotona StarWalker and SP Dynamis lasers, world leaders in advanced aesthetics. Personalised treatments with visible, natural and safe results.",
         "hero_cta1": "Book now", "hero_cta2": "See services",
         "trust": [("15+", "years of experience"), ("Fotona", "world-leading technology"), ("100%", "personalised protocols")],
@@ -373,4 +373,30 @@ HOME_CONTENT = {
             ("How do I know which treatment I need?", "At your first visit we assess your skin and design a personalised protocol for your case."),
         ],
     },
+}
+
+# ------------------------------------------------------------------
+# Opiniones reales de pacientes (Google). Texto original en español;
+# se muestran igual en todos los idiomas (no se traducen las citas).
+# ------------------------------------------------------------------
+REVIEWS = [
+    {"name": "Edgar Miguel Rivera", "stars": 5,
+     "text": "Excelente trato y atención muy buena, con mucho profesionalismo. Gracias, estoy satisfecho."},
+    {"name": "Carlos Gálvez", "stars": 5,
+     "text": "Llevo atendiéndome en la clínica más de 4 años y estoy muy contento, excelentes profesionales y bonitas instalaciones."},
+    {"name": "Manuel Ignacio García Flores", "stars": 5,
+     "text": "Personal altamente cualificado, muy profesionales, centro con tecnología de punta, trato agradable y en todo momento te explican las mejores opciones de tu caso. Los recomiendo. Lo que más me ha gustado es su ética profesional y honestidad en el manejo de los procedimientos; eso es importante para sentirse en confianza."},
+    {"name": "Maritza Avendaño", "stars": 5,
+     "text": "Maravilloso espacio, la recepción es muy atenta y cordial. El equipo humano es profesional y atento. Solo llevo 2 sesiones pero el trato y el equipo está genial. He venido desde Gerona a Barcelona solo para verles y merece la pena."},
+]
+
+REVIEW_UI = {
+    "es": {"eyebrow": "Opiniones", "h2": "Lo que dicen nuestros pacientes",
+           "note": "Opiniones reales de pacientes en Google. Los resultados de cada tratamiento pueden variar según la persona.", "src": "en Google"},
+    "ca": {"eyebrow": "Opinions", "h2": "El que diuen els nostres pacients",
+           "note": "Opinions reals de pacients a Google. Els resultats de cada tractament poden variar segons la persona.", "src": "a Google"},
+    "ru": {"eyebrow": "Отзывы", "h2": "Что говорят наши пациенты",
+           "note": "Настоящие отзывы пациентов из Google. Результаты каждой процедуры индивидуальны и зависят от человека.", "src": "в Google"},
+    "en": {"eyebrow": "Reviews", "h2": "What our patients say",
+           "note": "Genuine patient reviews from Google. Results of each treatment may vary from person to person.", "src": "on Google"},
 }

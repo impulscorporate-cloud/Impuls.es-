@@ -375,3 +375,40 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .lang { padding: 2px; }
   .lang a { padding: 6px 9px; font-size: .68rem; letter-spacing: .02em; }
 }
+
+/* ===== Teléfono en cabecera (tap-to-call) ===== */
+.nav__tel { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; color: var(--brand-ink); border: 1px solid var(--line); background: #fff; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.nav__tel svg { width: 19px; height: 19px; }
+.nav__tel:hover { background: var(--brand-tint); border-color: var(--brand); color: var(--brand-dark); }
+
+/* ===== Opiniones (prueba social real de Google) ===== */
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 22px; }
+.review { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 26px 26px 24px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; gap: 13px; }
+.review__head { display: flex; align-items: center; gap: 12px; }
+.review__ava { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-tint); color: var(--brand-ink); font-weight: 800; font-size: 1.05rem; flex: 0 0 auto; }
+.review__id { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.review__name { font-weight: 700; color: var(--ink); font-size: .95rem; line-height: 1.2; }
+.review__stars { display: inline-flex; gap: 1px; color: var(--brand); }
+.rv-star { width: 15px; height: 15px; fill: currentColor; }
+.review__src { margin-left: auto; align-self: flex-start; font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.review__text { color: var(--body); font-size: .95rem; margin: 0; line-height: 1.55; }
+.reviews__note { margin: 24px 0 0; font-size: .8rem; color: var(--muted); text-align: center; }
+
+/* ===== Barra de acción móvil fija (Llamar · WhatsApp · Cita) ===== */
+.mobile-cta { display: none; }
+@media (max-width: 640px) {
+  .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 95; display: grid; grid-template-columns: 1fr 1fr 1fr; background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -6px 20px -10px rgba(0,0,0,.22); }
+  .mobile-cta__item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 9px 4px calc(9px + env(safe-area-inset-bottom, 0px)); font-size: .68rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+  .mobile-cta__item svg { width: 20px; height: 20px; color: var(--brand-ink); }
+  .mobile-cta__book { background: var(--brand); color: #fff; }
+  .mobile-cta__book svg { color: #fff; }
+  body { padding-bottom: 64px; }
+  .wa-float { display: none; }
+}
+
+/* ===== Accesibilidad: foco visible + respeto a reduced-motion ===== */
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
